@@ -49,6 +49,7 @@
      <Compile Include="Assets\04.Characters\Scripts\Enemy.cs" />
      <Compile Include="Assets\04.Characters\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\04.Characters\Scripts\RunnerEnemy.cs" />
+     <Compile Include="Assets\06.Input\Scripts\InputController.cs" />
      <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineBlendListCamera.cs" />
      <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineBrain.cs" />
      <Compile Include="Assets\Cinemachine\Base\Runtime\Behaviours\CinemachineClearShot.cs" />
@@ -102,6 +103,7 @@
      <Compile Include="Assets\Cinemachine\Timeline\CinemachineMixer.cs" />
      <Compile Include="Assets\Cinemachine\Timeline\CinemachineShot.cs" />
      <Compile Include="Assets\Cinemachine\Timeline\CinemachineTrack.cs" />
+     <Compile Include="Assets\Scripts\UnitySingleton.cs" />
      <None Include="Assets\Cinemachine\ReleaseNotes.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/Users/weizh/Documents/Unity workspace/2D Platform Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

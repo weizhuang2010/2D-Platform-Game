@@ -5,32 +5,38 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private CharacterController2D character;
+    private InputController input;
 
-    public float runSpeed = 40f;
-    public float climbSpeed = 30f;
+    public float runSpeed = 4;
+    public float climbSpeed = 3;
     Vector2 move = Vector2.zero;
     bool jump = false;
     bool crouch = false;
 
+    private void Awake()
+    {
+        character = GetComponent<CharacterController2D>();
+        input = InputController.Instance;
+    }
+
     void Update()
     {
-        move.x = Input.GetAxisRaw("Horizontal") * runSpeed;
-        move.y = Input.GetAxisRaw("Vertical") * climbSpeed;
+        move.x = input.XMovement * runSpeed;
+        move.y = input.YMovement * climbSpeed;
 
-        if (Input.GetButtonDown("Jump"))
+        if (input.GetJumpKeyDown())
         {
             jump = true;
         }
 
-        if (Input.GetButtonDown("Crouch"))
+        if (input.GetCrouchKey())
         {
             crouch = true;
         }
-        else if (Input.GetButtonUp("Crouch"))
+        else
         {
             crouch = false;
         }
-
     }
 
     void FixedUpdate()

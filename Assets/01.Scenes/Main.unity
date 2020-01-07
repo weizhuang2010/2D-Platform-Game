@@ -181,7 +181,7 @@ Transform:
   - {fileID: 519420032}
   - {fileID: 1776767949}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &220609543
 GameObject:
@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 303272561}
   - component: {fileID: 303272560}
   - component: {fileID: 303272559}
+  - component: {fileID: 303272562}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -296,8 +297,6 @@ Transform:
   m_Children:
   - {fileID: 220609544}
   - {fileID: 103790976}
-  - {fileID: 1672948714}
-  - {fileID: 1514024489}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -313,8 +312,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f12774f773e11eb45a90ef5226fccea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 400
+  m_JumpForce: 600
   m_MovementSmoothing: 0.05
+  m_AttackInterval: 2
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 1
@@ -324,11 +324,12 @@ MonoBehaviour:
   m_WhatIsWall:
     serializedVersion: 2
     m_Bits: 1
+  m_WhatCanBeHit:
+    serializedVersion: 2
+    m_Bits: 1
   m_GroundCheck: {fileID: 220609544}
   m_CeilingCheck: {fileID: 103790976}
-  m_WallCheckL: {fileID: 1672948714}
-  m_WallCheckR: {fileID: 1514024489}
-  moveSpeed: 40
+  m_WallCheck: {fileID: 303272558}
 --- !u!61 &303272560
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -376,6 +377,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &303272562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303272556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4891920d6aca89445ba028bb56f77055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runSpeed: 4
+  climbSpeed: 3
 --- !u!1 &397049277
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,37 +1456,7 @@ Transform:
   - {fileID: 397049278}
   - {fileID: 523599995}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1514024488
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1514024489}
-  m_Layer: 8
-  m_Name: WallCheckR
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1514024489
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1514024488}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.628, y: -0.04, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 303272558}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1654981259
 GameObject:
@@ -1556,36 +1541,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1672948713
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1672948714}
-  m_Layer: 8
-  m_Name: WallCheckL
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1672948714
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1672948713}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.663, y: -0.04, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 303272558}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1776767948
 GameObject:
   m_ObjectHideFlags: 0
