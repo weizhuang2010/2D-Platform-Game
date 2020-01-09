@@ -1,5 +1,6 @@
 ﻿// 2020-01-08 23:00 解决了蹬墙跳的bug
 // 2020-01-08 00:56 添加角色动画：闲置、跑，播放时有Bug
+// 2020-01-10 00:12 解决了部分动画切换不正确的问题，仍需继续检查
 
 using UnityEngine;
 
@@ -22,11 +23,12 @@ public class PlayerController : MonoBehaviour
 
     const float k_GroundCheckRadius = .2f;		// Radius of the overlap circle to determine if grounded.
     const float k_CeilingCheckRadius = .2f;		// Radius of the overlap circle to determine if the player can stand up.
-    const float k_WallCheckRadius = .2f;            // Radius of the overlap circle to determine if the player is on the wall.
+    const float k_WallCheckRadius = .1f;            // Radius of the overlap circle to determine if the player is on the wall.
     const float k_WallCheckDistance = .5f;
 
 
     private GroundState m_GroundState;
+    private GroundState m_LastGroundState;
     private bool m_FacingRight = true;      // For determining which way the player is currently facing.
     private bool m_Running;
     private Vector3 m_Velocity = Vector3.zero;
@@ -116,6 +118,8 @@ public class PlayerController : MonoBehaviour
         Move(m_Movement, jump, crouch);
 
         Animate();
+
+        m_LastGroundState = m_GroundState;
     }
 
 
@@ -164,9 +168,6 @@ public class PlayerController : MonoBehaviour
             {
                 m_Rigidbody2D.AddForce(new Vector2(0f, jumpForce));
 
-
-                m_Animator.ResetTrigger("run");
-                m_Animator.SetTrigger("jump");
             }
             else if (m_GroundState == GroundState.ONWALL)
             {
@@ -180,11 +181,7 @@ public class PlayerController : MonoBehaviour
                 }
                 force.y = jumpForce;
                 m_Rigidbody2D.AddForce(force);
-
-                m_Animator.ResetTrigger("stop");
             }
-
-            m_Animator.SetTrigger("jump");
 
             // 设置状态
             m_GroundState = GroundState.IN_AIR;
@@ -195,6 +192,33 @@ public class PlayerController : MonoBehaviour
     // 动画检测
     private void Animate()
     {
+        if (m_LastGroundState == GroundState.GROUNDED && m_GroundState == GroundState.IN_AIR)
+        {
+            m_Animator.ResetTrigger("land");
+            m_Animator.ResetTrigger("stop");
+            m_Animator.SetTrigger("jump");
+        }
+        if (m_LastGroundState == GroundState.GROUNDED && m_GroundState == GroundState.ONWALL)
+        {
+            m_Animator.ResetTrigger("land");
+            m_Animator.ResetTrigger("stop");
+            m_Animator.ResetTrigger("run");
+            m_Animator.SetTrigger("onwall");
+        }
+        if (m_LastGroundState == GroundState.IN_AIR && m_GroundState == GroundState.GROUNDED)
+        {
+            m_Animator.ResetTrigger("stop");
+            m_Animator.ResetTrigger("jump");
+            bool moving = (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) ? true : false;
+            m_Animator.SetBool("moving", moving);
+            m_Animator.SetFloat("yspeed", m_Rigidbody2D.velocity.y);
+            m_Animator.SetTrigger("land");
+        }
+        if (m_LastGroundState == GroundState.IN_AIR && m_GroundState == GroundState.ONWALL)
+        {
+            m_Animator.ResetTrigger("jump");
+            m_Animator.SetTrigger("onwall");
+        }
         if (m_GroundState == GroundState.GROUNDED)
         {
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
@@ -207,22 +231,6 @@ public class PlayerController : MonoBehaviour
                 m_Animator.ResetTrigger("run");
                 m_Animator.SetTrigger("stop");
             }
-        }
-        if (m_GroundState == GroundState.IN_AIR)
-        {
-            m_Animator.ResetTrigger("stop");
-            m_Animator.ResetTrigger("onwall");
-            m_Animator.SetFloat("yspeed", m_Rigidbody2D.velocity.y);
-            if (m_Rigidbody2D.velocity.y > 0) m_Animator.SetTrigger("jump");
-            if (m_Rigidbody2D.velocity.y < 0) m_Animator.ResetTrigger("jump");
-        }
-        if (m_GroundState == GroundState.ONWALL)
-        {
-            m_Animator.ResetTrigger("jump");
-            m_Animator.ResetTrigger("fall");
-
-            m_Animator.SetTrigger("stop");
-            m_Animator.SetTrigger("onwall");
         }
     }
 
