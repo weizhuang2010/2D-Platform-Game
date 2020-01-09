@@ -1,0 +1,2035 @@
+fileFormatVersion: 2
+guid: 6f2e1fbf42c65394ca43db15f8f87290
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_0
+  - first:
+      213: 21300002
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_1
+  - first:
+      213: 21300004
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_2
+  - first:
+      213: 21300006
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_3
+  - first:
+      213: 21300008
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_4
+  - first:
+      213: 21300010
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_5
+  - first:
+      213: 21300012
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_6
+  - first:
+      213: 21300014
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_7
+  - first:
+      213: 21300016
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_8
+  - first:
+      213: 21300018
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_9
+  - first:
+      213: 21300020
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_10
+  - first:
+      213: 21300022
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_11
+  - first:
+      213: 21300024
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_12
+  - first:
+      213: 21300026
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_13
+  - first:
+      213: 21300028
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_14
+  - first:
+      213: 21300030
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_15
+  - first:
+      213: 21300032
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_16
+  - first:
+      213: 21300034
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_17
+  - first:
+      213: 21300036
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_18
+  - first:
+      213: 21300038
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_19
+  - first:
+      213: 21300040
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_20
+  - first:
+      213: 21300042
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_21
+  - first:
+      213: 21300044
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_22
+  - first:
+      213: 21300046
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_23
+  - first:
+      213: 21300048
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_24
+  - first:
+      213: 21300050
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_25
+  - first:
+      213: 21300052
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_26
+  - first:
+      213: 21300054
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_27
+  - first:
+      213: 21300056
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_28
+  - first:
+      213: 21300058
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_29
+  - first:
+      213: 21300060
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_30
+  - first:
+      213: 21300062
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_31
+  - first:
+      213: 21300064
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_32
+  - first:
+      213: 21300066
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_33
+  - first:
+      213: 21300068
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_34
+  - first:
+      213: 21300070
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_35
+  - first:
+      213: 21300072
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_36
+  - first:
+      213: 21300074
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_37
+  - first:
+      213: 21300076
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_38
+  - first:
+      213: 21300078
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_39
+  - first:
+      213: 21300080
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_40
+  - first:
+      213: 21300082
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_41
+  - first:
+      213: 21300084
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_42
+  - first:
+      213: 21300086
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_43
+  - first:
+      213: 21300088
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_44
+  - first:
+      213: 21300090
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_45
+  - first:
+      213: 21300092
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_46
+  - first:
+      213: 21300094
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_47
+  - first:
+      213: 21300096
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_48
+  - first:
+      213: 21300098
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_49
+  - first:
+      213: 21300100
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_50
+  - first:
+      213: 21300102
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_51
+  - first:
+      213: 21300104
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_52
+  - first:
+      213: 21300106
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_53
+  - first:
+      213: 21300108
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_54
+  - first:
+      213: 21300110
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_55
+  - first:
+      213: 21300112
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_56
+  - first:
+      213: 21300114
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_57
+  - first:
+      213: 21300116
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_58
+  - first:
+      213: 21300118
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_59
+  - first:
+      213: 21300120
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_60
+  - first:
+      213: 21300122
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_61
+  - first:
+      213: 21300124
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_62
+  - first:
+      213: 21300126
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_63
+  - first:
+      213: 21300128
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_64
+  - first:
+      213: 21300130
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_65
+  - first:
+      213: 21300132
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_66
+  - first:
+      213: 21300134
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_67
+  - first:
+      213: 21300136
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_68
+  - first:
+      213: 21300138
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_69
+  - first:
+      213: 21300140
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_70
+  - first:
+      213: 21300142
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_71
+  - first:
+      213: 21300144
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_72
+  - first:
+      213: 21300146
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_73
+  - first:
+      213: 21300148
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_74
+  - first:
+      213: 21300150
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_75
+  - first:
+      213: 21300152
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_76
+  - first:
+      213: 21300154
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_77
+  - first:
+      213: 21300156
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_78
+  - first:
+      213: 21300158
+    second: ninjagaidentrilogy_ryuhayabusa_sheet_79
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 26
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 355
+        width: 17
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd294ca042b48d444b744ca4fbafb1b7
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 355
+        width: 17
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f88aa2020a6af784aaa652dcf4decbc9
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 316
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db2571ca2ab7c7f40a51ec10af0a701e
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 316
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 537a2545f16178648b53bb88673ae6a0
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 316
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae6cdaab18d39834881b6df44576cbcd
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 315
+        width: 17
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f82d1a76b8157ac4185356ed10580590
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 315
+        width: 17
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d2d5f49dee0bb949ac107c1ccb5c852
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 316
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66e77f1c85da0704483a788d90f8ef5a
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 316
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f530048552891848846454e8efd9957
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 316
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7615de93d97bb34e8bb120d35744e7c
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 283
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f66008e7c31bc458fc01a51a6be641
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 279
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b21a262782b138499f22935e7dff1ee
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 283
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a4d702130af3a8418eb112af396065d
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 279
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6ad4edd10367284f860e53b3c98b3de
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 276
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1685e21688f06e546ae8593188a2b29d
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 276
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65c1736ae37d7d409bd21b31400bd0c
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 276
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7024257d00e52b3428086527b5b9030e
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 276
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a41cb2a0c6a64bd43a2123616b8d2500
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 279
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b975b215f5f4a9b4fac04302a59953ce
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 283
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e7dfb1c0a936ab48b7eccf2ef484305
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 279
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16351ed19614dec49a05a9757b163601
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_21
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 283
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f001667e88492c48b74b0767ddb51e8
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_22
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 240
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9a225386c68efe45b9cb7463057360d
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_23
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 239
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac60c882e70a7dc42b038e90410c0afd
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_24
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 239
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b853957b5bcf5f84cac8f5f76bfd8b07
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_25
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 235
+        width: 21
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 631aa151d0adc5a42828fd0ff4fd648a
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_26
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 235
+        width: 21
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 957d177708ea1404281dd8dff66f5140
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_27
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 239
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bdf5ac0dd9aab249abe67a3a781dfca
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_28
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 239
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42d377d0c02ead54b8e2ab01ab507faf
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_29
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 240
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 812a9ed4146fa1b40b46c285d87f5f73
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_30
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 193
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5cf8b198b8c2ea45ab95f3757f12000
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_31
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 193
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97c42c7ce26b0b143b1ebda1134ba302
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_32
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 194
+        width: 16
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dbea1c46207af441846bfe02564fbca
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_33
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 193
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9a38935f181d23489a8edb126819c53
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_34
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 193
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc73de9e02319ed4285c5c234e431275
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_35
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 194
+        width: 16
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d5043b01ed0a64418fb039a3fe8c7f2
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_36
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 193
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b74f9a28ebe40724c8b8ca007baab3bb
+      internalID: 21300072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_37
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 193
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a19cc43e2b229334d94ef0013725860d
+      internalID: 21300074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 156
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cceb113ac80719429b10d77fb2fd35b
+      internalID: 21300076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_39
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 156
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4637390a60afc174d8ff2978a3d1ea2d
+      internalID: 21300078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_40
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 156
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e16324c98637f847933a6c4ef74f5da
+      internalID: 21300080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_41
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 157
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a43c83084dc4c1544a0755a4da636816
+      internalID: 21300082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_42
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 156
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d83ed6451c2845742917d1bd2727b003
+      internalID: 21300084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_43
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 156
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7964883016c66f0489c20b67ce3a3d90
+      internalID: 21300086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_44
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 157
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff01ba019b0f75845984c2fef006ae31
+      internalID: 21300088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_45
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 156
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c166e4e9a2bc774f86b12187f0b5da1
+      internalID: 21300090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_46
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 156
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ade8d91319f484a9ba59e82bfa855e
+      internalID: 21300092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_47
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 156
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5f6f276f0da73940bca8184c349e2bc
+      internalID: 21300094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_48
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 117
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84658eded347a5641a4c5bf92761fbef
+      internalID: 21300096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_49
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 117
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b82f820232742b0409f5d77d9cb86214
+      internalID: 21300098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_50
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 117
+        width: 40
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 979ada03513ba134994c54d47535a8c9
+      internalID: 21300100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_51
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 116
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf1c88da62382a941bb7c1723abb8a09
+      internalID: 21300102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_52
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 116
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9e3baa21d5be9d40be2d16c152f820a
+      internalID: 21300104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_53
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 117
+        width: 40
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0721dc1c7aa531149bc28da588b783ab
+      internalID: 21300106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_54
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 117
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 848a2179280207d4a80f5f077dc193b8
+      internalID: 21300108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_55
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 117
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07c9db19ae43bed4b81c07956fe9ae08
+      internalID: 21300110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_56
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 87
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68b713e91d639734caf7ac2ad506770e
+      internalID: 21300112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_57
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 76
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffe0f96b60e79ac468f209e8437e0623
+      internalID: 21300114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_58
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 86
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb35c11bb8517241a181c391bd787c1
+      internalID: 21300116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_59
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 77
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be2d3c8cdba279d428e5b725991374b3
+      internalID: 21300118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_60
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 77
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d78cacd16dbdcd940a5e9d12c8fe4f77
+      internalID: 21300120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_61
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 86
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa92f9093c25ef649bab1055fbd634a9
+      internalID: 21300122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_62
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 76
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 068f7d4d3faf0b7429133fcabc612656
+      internalID: 21300124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_63
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 87
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e53eaea7102627b48a621c91d5613b51
+      internalID: 21300126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_64
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 36
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8947c45d8755cf042b9a87420e4aa1c6
+      internalID: 21300128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_65
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 36
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 568fa5eafaf21f240af75724fa4357e6
+      internalID: 21300130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_66
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 36
+        width: 38
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f7c8f66e0133154184e3ac8c472eda2
+      internalID: 21300132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_67
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 36
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af02f1a1c6fc6bc428b7731b120a6a57
+      internalID: 21300134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_68
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 36
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e108b4db52e209e4a8fd4bc59279fd17
+      internalID: 21300136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_69
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 36
+        width: 38
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2fafc5cc87e6b848830e7d2f9bb2b05
+      internalID: 21300138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_70
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 36
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f40db5ed4daefe4f95ceb7de776cd79
+      internalID: 21300140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_71
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 36
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 088b8a0c8ca4f97488f5379dc76b07e6
+      internalID: 21300142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_72
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 3
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcbedd4305fb6de49830a1744ea9fef6
+      internalID: 21300144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_73
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 0
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bc12c8e36788f24bbd490e894c8d3ef
+      internalID: 21300146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_74
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 0
+        width: 29
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c763f7e002fb9045a368e4a73fa4696
+      internalID: 21300148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_75
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 0
+        width: 39
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c1894ca65e6f194a9a86f1067a02e36
+      internalID: 21300150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_76
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 0
+        width: 39
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00cffb3de6b436740aa0f887b9a34132
+      internalID: 21300152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_77
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 0
+        width: 29
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fffe543a84185df4bad10b4766939a33
+      internalID: 21300154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_78
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 0
+        width: 25
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e91b7b0e1d4823458fbcfb2a2288d35
+      internalID: 21300156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ninjagaidentrilogy_ryuhayabusa_sheet_79
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 3
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7abf5c85511dc447a51f4962c56b5bc
+      internalID: 21300158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 645cd1dc128a8ef42a13966ec6fec31e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

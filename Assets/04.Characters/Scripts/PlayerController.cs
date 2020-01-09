@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D m_Rigidbody2D;
     private InputController m_InputController;
-
     [SerializeField] private Animator m_Animator;
 
     private Vector3 m_DefaultScale;
@@ -33,9 +32,9 @@ public class PlayerController : MonoBehaviour
     private Vector3 m_Velocity = Vector3.zero;
     private float m_NextAttack = 0;
     private bool m_CanAttack = true;
+    private Vector3 m_WallCheckL;
+    private Vector3 m_WallCheckR;
     private Vector2 m_Movement = Vector2.zero;
-    private bool m_Jump;
-    private bool m_Crouch;
 
     [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;  // How much to smooth out the movement
 
@@ -48,12 +47,10 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
-        // m_Animator = GetComponent<Animator>();
         m_InputController = InputController.Instance;
 
         m_DefaultScale = transform.localScale;
         m_GravityScale = m_Rigidbody2D.gravityScale;		// Get default gravity scale.
-        // m_WallCheckDistance = Mathf.Abs(transform.localScale.x / 2);
     }
 
     private void Update()
@@ -61,47 +58,12 @@ public class PlayerController : MonoBehaviour
         float scalex = m_DefaultScale.x * (m_FacingRight ? 1 : -1);
         transform.localScale = new Vector3(scalex, transform.localScale.y, transform.localScale.z);
 
+        // 墙面碰撞检测
+        m_WallCheckL = transform.position - new Vector3(k_WallCheckDistance, 0, 0);
+        m_WallCheckR = transform.position + new Vector3(k_WallCheckDistance, 0, 0);
+
         m_Movement.x = m_InputController.XMovement * runSpeed;
         m_Movement.y = m_InputController.YMovement * climbSpeed;
-
-        // When shall out player run
-        if (m_InputController.XMovement != 0)
-        {
-            m_Running = true;
-        }
-        else
-        {
-            m_Running = false;
-        }
-
-
-        if (m_InputController.GetJumpKeyDown())
-        {
-            m_Jump = true;
-        }
-
-
-        // 蹲
-        if (m_InputController.GetCrouchKey())
-        {
-            m_Crouch = true;
-        }
-        else
-        {
-            m_Crouch = false;
-        }
-
-
-        // Do player's animation
-        if (m_Running)
-        {
-            m_Animator.SetTrigger("run");
-        }
-        else
-        {
-            m_Animator.SetTrigger("idle");
-        }
-
 
         if (Time.time > m_NextAttack)
         {
@@ -111,33 +73,56 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        m_GroundState = GroundState.IN_AIR;
-
-        Vector3 m_WallCheckL = transform.position - new Vector3(k_WallCheckDistance, 0, 0);
-        Vector3 m_WallCheckR = transform.position + new Vector3(k_WallCheckDistance, 0, 0);
-
-        // Check state
+        // 状态检测
         if (Physics2D.OverlapCircle(m_GroundCheck.position, k_GroundCheckRadius, m_WhatIsGround))
         {
             m_GroundState = GroundState.GROUNDED;
         }
         else if (Physics2D.OverlapCircle(m_WallCheckL, k_WallCheckRadius, m_WhatIsWall))
         {
-            m_GroundState = GroundState.CLIMBING;
-            m_FacingRight = true;
+            m_GroundState = GroundState.ONWALL;
+            m_FacingRight = false;
         }
         else if (Physics2D.OverlapCircle(m_WallCheckR, k_WallCheckRadius, m_WhatIsWall))
         {
-            m_GroundState = GroundState.CLIMBING;
-            m_FacingRight = false;
+            m_GroundState = GroundState.ONWALL;
+            m_FacingRight = true;
         }
         else if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingCheckRadius, m_WhatIsMonkeyBars))
         {
             m_GroundState = GroundState.HANGING;
         }
+        else
+        {
+            m_GroundState = GroundState.IN_AIR;
+        }
 
 
-        if (m_GroundState == GroundState.IN_AIR)
+        // 转身检测
+        if (m_GroundState != GroundState.ONWALL)
+        {
+            if (InputController.Instance.XMovement > 0)
+            {
+                m_FacingRight = true;
+            }
+            else if (InputController.Instance.XMovement < 0)
+            {
+                m_FacingRight = false;
+            }
+        }
+
+        bool jump = m_InputController.GetJumpKeyDown();
+        bool crouch = m_InputController.GetCrouchKey();
+        Move(m_Movement, jump, crouch);
+
+        Animate();
+    }
+
+
+    public void Move(Vector2 move, bool jump, bool crouch)
+    {
+        // 重力检测
+        if (m_GroundState == GroundState.IN_AIR || m_GroundState == GroundState.GROUNDED)
         {
             m_Rigidbody2D.gravityScale = m_GravityScale;
         }
@@ -146,26 +131,19 @@ public class PlayerController : MonoBehaviour
             m_Rigidbody2D.gravityScale = 0;
         }
 
-        Move(m_Movement, m_Jump, m_Crouch);
-        m_Jump = false;
-    }
-
-
-    public void Move(Vector2 move, bool jump, bool crouch)
-    {
+        // 移动检测
         Vector3 targetVeclocity;
-
         if (m_GroundState == GroundState.GROUNDED && !crouch)
         {
-            targetVeclocity = new Vector2(move.x, 0);
+            targetVeclocity = new Vector2(move.x, m_Rigidbody2D.velocity.y);
         }
-        else if (m_GroundState == GroundState.CLIMBING)
+        else if (m_GroundState == GroundState.ONWALL)
         {
-            targetVeclocity = new Vector2(0, move.y);
+            targetVeclocity = new Vector2(m_Rigidbody2D.velocity.x, move.y);
         }
         else if (m_GroundState == GroundState.HANGING)
         {
-            targetVeclocity = new Vector2(move.x, 0);
+            targetVeclocity = new Vector2(move.x, m_Rigidbody2D.velocity.y);
         }
         else if (m_GroundState == GroundState.IN_AIR)
         {
@@ -175,43 +153,78 @@ public class PlayerController : MonoBehaviour
         {
             targetVeclocity = Vector3.zero;
         }
-
         m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVeclocity, ref m_Velocity, m_MovementSmoothing);
 
 
-        // If the player should flip...
-        if (m_GroundState != GroundState.CLIMBING)
-        {
-            if (move.x > 0)
-            {
-                m_FacingRight = true;
-            }
-            else if (move.x < 0)
-            {
-                m_FacingRight = false;
-            }
-        }
-
-
+        // 跳跃检测
         if (jump)
         {
             Vector2 force = Vector2.zero;
-
             if (m_GroundState == GroundState.GROUNDED || m_GroundState == GroundState.HANGING)
             {
                 m_Rigidbody2D.AddForce(new Vector2(0f, jumpForce));
-            }
-            else if (m_GroundState == GroundState.CLIMBING)
-            {
-                force.x = jumpForce * (m_FacingRight ? 1 : -1);
-                force.y = 0;
 
-                m_Rigidbody2D.AddForce(force);
+
+                m_Animator.ResetTrigger("run");
+                m_Animator.SetTrigger("jump");
             }
+            else if (m_GroundState == GroundState.ONWALL)
+            {
+                if (Physics2D.OverlapCircle(m_WallCheckL, k_WallCheckRadius, m_WhatIsWall))
+                {
+                    force.x = jumpForce;
+                }
+                else if (Physics2D.OverlapCircle(m_WallCheckR, k_WallCheckRadius, m_WhatIsWall))
+                {
+                    force.x = -jumpForce;
+                }
+                force.y = jumpForce;
+                m_Rigidbody2D.AddForce(force);
+
+                m_Animator.ResetTrigger("stop");
+            }
+
+            m_Animator.SetTrigger("jump");
+
+            // 设置状态
             m_GroundState = GroundState.IN_AIR;
         }
     }
 
+
+    // 动画检测
+    private void Animate()
+    {
+        if (m_GroundState == GroundState.GROUNDED)
+        {
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+            {
+                m_Animator.ResetTrigger("stop");
+                m_Animator.SetTrigger("run");
+            }
+            else
+            {
+                m_Animator.ResetTrigger("run");
+                m_Animator.SetTrigger("stop");
+            }
+        }
+        if (m_GroundState == GroundState.IN_AIR)
+        {
+            m_Animator.ResetTrigger("stop");
+            m_Animator.ResetTrigger("onwall");
+            m_Animator.SetFloat("yspeed", m_Rigidbody2D.velocity.y);
+            if (m_Rigidbody2D.velocity.y > 0) m_Animator.SetTrigger("jump");
+            if (m_Rigidbody2D.velocity.y < 0) m_Animator.ResetTrigger("jump");
+        }
+        if (m_GroundState == GroundState.ONWALL)
+        {
+            m_Animator.ResetTrigger("jump");
+            m_Animator.ResetTrigger("fall");
+
+            m_Animator.SetTrigger("stop");
+            m_Animator.SetTrigger("onwall");
+        }
+    }
 
     private void Attack()
     {
