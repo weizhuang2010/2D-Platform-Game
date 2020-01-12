@@ -5,20 +5,6 @@ using UnityEngine;
 
 public class InputController : UnitySingleton<InputController>
 {
-    private float _xMovement;
-    private float _yMovement;
-
-    public float XMovement { get => _xMovement; }
-    public float YMovement { get => _yMovement; }
-
-
-    private void Update()
-    {
-        _xMovement = Input.GetAxisRaw("Horizontal");
-        _yMovement = Input.GetAxisRaw("Vertical");
-    }
-
-
     public bool GetAttackKeyDown()
     {
         if (Input.GetKeyDown(KeyCode.J))
@@ -39,5 +25,16 @@ public class InputController : UnitySingleton<InputController>
         if (Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.Space))
             return true;
         return false;
+    }
+
+
+    public float GetHorizontalAxisRaw()
+    {
+        return Input.GetAxisRaw("Horizontal");
+    }
+
+    public float GetVerticalAxisRaw()
+    {
+        return Input.GetAxisRaw("Vertical");
     }
 }

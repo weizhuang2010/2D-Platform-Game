@@ -1,7 +1,8 @@
 ﻿public enum GroundState
 {
     GROUNDED,
-    ONWALL,
     HANGING,
-    IN_AIR
+    ONWALL,
+    IN_AIR,
+    WALL_TO_GROUND
 }
