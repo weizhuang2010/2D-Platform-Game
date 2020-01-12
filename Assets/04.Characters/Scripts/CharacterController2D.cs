@@ -1,200 +1,166 @@
-﻿// 2020-01-12 14:27 应该算是修复了蹬墙跳的bug
+﻿// 2020-01-08 00:56 添加角色动画：闲置、跑，播放时有Bug
+// 2020-01-10 00:12 解决了部分动画切换不正确的问题，仍需继续检查
+// 2020-01-12 23:12 解决了从墙面到地面的动画显示错误的问题
 
 using System;
 using UnityEngine;
 
 public class CharacterController2D : MonoBehaviour
 {
-    private GameController m_GameController;
-    private Rigidbody2D m_Rigidbody2D;
     [SerializeField] private Transform m_Body;
+    private Rigidbody2D m_Rigidbody2D;
     private Animator m_Animator;
 
     [SerializeField] private Transform m_GroundCheck;
-    [SerializeField] private Transform m_CeilingCheck;
     [SerializeField] private Transform m_WallCheckL;
     [SerializeField] private Transform m_WallCheckR;
-    [SerializeField] private Transform m_OnWallGroundCheck;
 
-    [Range(0, 3)] [SerializeField] private float m_GravityScale = 3;
-    [Range(0, 0.5f)] [SerializeField] private float m_MovementSmoothing = .1f;  // How much to smooth out the movement
-    private Vector3 m_Velocity = Vector3.zero;
+    const float k_ColliderCheckRadius = .1f;
 
-    [Range(0, 10)] public float runSpeed = 4.5f;
-    [Range(0, 5)] public float climbSpeed = 3;
-    [Range(500, 1000)] public float jumpForce = 630f;
+    [Range(0, 10)] [SerializeField] private float m_RunSpeed;
+    [Range(0, 0.5f)] [SerializeField] private float m_MovementSmoothing = .1f;
+    [Range(0, 10)] [SerializeField] private float m_ClimbSpeed;
+    [Range(0, 800)] [SerializeField] private float m_JumpForce;
 
-    const float m_BlockCheckRadius = .1f;
+    private LayerMask m_WhatIsGround;
+    private LayerMask m_WhatIsWall;
 
     private GroundState m_GroundState;
-    private Vector3 m_InitBodyScale;
-    private bool m_Jump;
+    private bool m_FacingRight = true;
+    private Vector2 m_Velocity = Vector2.zero;
 
+    private Vector2 m_MovementInput = Vector2.zero;
+    private bool m_Jump = false;
 
     private void Awake()
     {
-        m_GameController = GameController.Instance;
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
         m_Animator = m_Body.GetComponent<Animator>();
-        m_InitBodyScale = m_Body.localScale;
+        m_WhatIsGround = GameController.Instance.GroundLayer;
+        m_WhatIsWall = GameController.Instance.WallLayer;
     }
-
 
     private void Update()
     {
-        if (InputController.Instance.GetJumpKeyDown())
-            m_Jump = true;
+        m_MovementInput.x = InputController.Instance.GetHorizontalAxisRaw();
+        m_MovementInput.y = InputController.Instance.GetVerticalAxisRaw();
 
-        if (!BodyTouchWall() && !OnWallTouchGround())
+        if (InputController.Instance.GetJumpKeyDown()) m_Jump = true;
+
+        if (FeetTouchGround())
         {
-            float scaleX = m_Body.localScale.x;
-            if (InputController.Instance.GetHorizontalAxisRaw() < 0)
-            {
-                scaleX = -m_InitBodyScale.x;
-            }
-            else if (InputController.Instance.GetHorizontalAxisRaw() > 0)
-            {
-                scaleX = m_InitBodyScale.x;
-            }
-            m_Body.localScale = new Vector3(scaleX, m_InitBodyScale.y, m_InitBodyScale.z);
+            m_GroundState = GroundState.GROUNDED;
+        }
+        else if (BodyTouchWall())
+        {
+            m_GroundState = GroundState.ONWALL;
+        }
+        else
+        {
+            m_GroundState = GroundState.IN_AIR;
+        }
+
+        if (m_GroundState == GroundState.GROUNDED)
+        {
+            m_WallCheckL.gameObject.SetActive(false);
+            m_WallCheckR.gameObject.SetActive(false);
+            m_Rigidbody2D.gravityScale = 1;
+            SetAnimTrigger("idle");
+            CheckFlip();
+        }
+        else if (m_GroundState == GroundState.ONWALL)
+        {
+            m_Rigidbody2D.velocity = Vector2.zero;
+            m_Rigidbody2D.gravityScale = 0;
+            SetAnimTrigger("onwall");
+        }
+        else if (m_GroundState == GroundState.IN_AIR)
+        {
+            m_WallCheckL.gameObject.SetActive(true);
+            m_WallCheckR.gameObject.SetActive(true);
+            m_Rigidbody2D.gravityScale = 1;
+            SetAnimTrigger("fall");
+            CheckFlip();
         }
     }
 
 
     private void FixedUpdate()
     {
-        if (FeetTouchGround())
+        if (m_GroundState == GroundState.GROUNDED)
         {
-            m_Rigidbody2D.gravityScale = m_GravityScale;
-            SetAnimTrigger(InputController.Instance.GetHorizontalAxisRaw() == 0 ? "stop" : "run");
-            m_WallCheckL.gameObject.SetActive(false);
-            m_WallCheckR.gameObject.SetActive(false);
-            m_CeilingCheck.gameObject.SetActive(false);
-            m_OnWallGroundCheck.gameObject.SetActive(false);
-            m_GroundState = GroundState.GROUNDED;
+            Move(new Vector2(m_MovementInput.x * m_RunSpeed, 0));
+            if (m_Jump) Jump(new Vector2(0, m_JumpForce));
         }
-        else if (HeadTouchMonkeyBars())
+        else if (m_GroundState == GroundState.ONWALL)
         {
-            m_Rigidbody2D.gravityScale = 0;
-            m_WallCheckR.gameObject.SetActive(false);
-            m_WallCheckR.gameObject.SetActive(false);
-            m_GroundCheck.gameObject.SetActive(false);
-            m_OnWallGroundCheck.gameObject.SetActive(true);
-            m_GroundState = GroundState.HANGING;
+            Move(new Vector2(0, m_MovementInput.y * m_ClimbSpeed));
+            if (m_Jump) Jump(new Vector2(0, m_JumpForce));
         }
-        else if (OnWallTouchGround())
+        else if (m_GroundState == GroundState.IN_AIR)
         {
-            m_Rigidbody2D.gravityScale = m_GravityScale / 2;
-            m_CeilingCheck.gameObject.SetActive(false);
-            m_WallCheckL.gameObject.SetActive(false);
-            m_WallCheckR.gameObject.SetActive(false);
-            m_GroundCheck.gameObject.SetActive(true);
-            SetAnimTrigger("fall");
-            m_GroundState = GroundState.WALL_TO_GROUND;
+            Move(new Vector2(m_MovementInput.x * m_RunSpeed, m_Rigidbody2D.velocity.y));
         }
-        else if (BodyTouchWall())
-        {
-            m_Rigidbody2D.gravityScale = 0;
-            SetAnimTrigger(m_Rigidbody2D.velocity.y == 0 ? "onwall" : "onwall");
-            m_CeilingCheck.gameObject.SetActive(false);
-            m_GroundCheck.gameObject.SetActive(false);
-            m_OnWallGroundCheck.gameObject.SetActive(true);
-            m_GroundState = GroundState.ONWALL;
-        }
-        else
-        {
-            m_Rigidbody2D.gravityScale = m_GravityScale;
-            SetAnimTrigger(m_Rigidbody2D.velocity.y > 0 ? "jump" : "fall");
-            m_WallCheckL.gameObject.SetActive(true);
-            m_WallCheckR.gameObject.SetActive(true);
-            m_CeilingCheck.gameObject.SetActive(true);
-            m_GroundCheck.gameObject.SetActive(true);
-            m_OnWallGroundCheck.gameObject.SetActive(false);
-            m_GroundState = GroundState.IN_AIR;
-        }
+    }
 
 
-        Debug.Log(m_GroundState);
+    private void Move(Vector2 move)
+    {
+        m_Rigidbody2D.velocity = Vector2.SmoothDamp(m_Rigidbody2D.velocity, move, ref m_Velocity, m_MovementSmoothing);
+    }
 
-        Move(m_Jump);
 
+    private void Jump(Vector2 force)
+    {
+        m_Rigidbody2D.AddForce(force);
         m_Jump = false;
     }
 
 
-    public bool FeetTouchGround()
+    private void CheckFlip()
+    {
+        if (m_MovementInput.x > 0 && !m_FacingRight || m_MovementInput.x < 0 && m_FacingRight)
+        {
+            // Switch the way the player is labelled as facing.
+            m_FacingRight = !m_FacingRight;
+
+            // Multiply the player's x local scale by -1.
+            Vector3 theScale = m_Body.localScale;
+            theScale.x *= -1;
+            m_Body.localScale = theScale;
+        }
+    }
+
+
+    private bool FeetTouchGround()
     {
         if (m_GroundCheck.gameObject.activeInHierarchy &&
-            Physics2D.OverlapCircle(m_GroundCheck.position, m_BlockCheckRadius, m_GameController.GroundLayer))
+            Physics2D.OverlapCircle(m_GroundCheck.position, k_ColliderCheckRadius, m_WhatIsGround))
             return true;
         return false;
     }
 
-
-    public bool HeadTouchMonkeyBars()
-    {
-        if (m_CeilingCheck.gameObject.activeInHierarchy &&
-            Physics2D.OverlapCircle(m_CeilingCheck.position, m_BlockCheckRadius, m_GameController.MonkeyBarsLayer))
-            return true;
-        return false;
-    }
-
-
-    public bool LeftBodyTouchWall()
+    private bool LeftBodyTouchWall()
     {
         if (m_WallCheckL.gameObject.activeInHierarchy &&
-            Physics2D.OverlapCircle(m_WallCheckL.position, m_BlockCheckRadius, m_GameController.WallLayer))
+            Physics2D.OverlapCircle(m_WallCheckL.position, k_ColliderCheckRadius, m_WhatIsWall))
             return true;
         return false;
     }
 
-
-    public bool RightBodyTouchWall()
+    private bool RightBodyTouchWall()
     {
         if (m_WallCheckR.gameObject.activeInHierarchy &&
-            Physics2D.OverlapCircle(m_WallCheckR.position, m_BlockCheckRadius, m_GameController.WallLayer))
+            Physics2D.OverlapCircle(m_WallCheckR.position, k_ColliderCheckRadius, m_WhatIsWall))
             return true;
         return false;
     }
 
-
-    private bool OnWallTouchGround()
-    {
-        if (m_OnWallGroundCheck.gameObject.activeInHierarchy &&
-            Physics2D.OverlapCircle(m_OnWallGroundCheck.position, m_BlockCheckRadius, m_GameController.GroundLayer))
-            return true;
-        return false;
-    }
-
-
-    public bool BodyTouchWall()
+    private bool BodyTouchWall()
     {
         if (LeftBodyTouchWall() || RightBodyTouchWall())
             return true;
         return false;
-    }
-
-
-    public bool TouchMultipleTerrain()
-    {
-        if (BodyTouchWall() && HeadTouchMonkeyBars())
-            return true;
-
-        if (FeetTouchGround() && HeadTouchMonkeyBars())
-            return true;
-
-        if (FeetTouchGround() && BodyTouchWall())
-            return true;
-
-        return false;
-    }
-
-
-    public bool TouchNoTerrain()
-    {
-        if (FeetTouchGround() || BodyTouchWall() || HeadTouchMonkeyBars())
-            return false;
-        return true;
     }
 
 
@@ -224,56 +190,7 @@ public class CharacterController2D : MonoBehaviour
             "jump",
             "fall",
             "onwall",
-            "stop"
+            "idle"
         };
-    }
-
-
-    private void Move(bool jump)
-    {
-        float xMovement = InputController.Instance.GetHorizontalAxisRaw() * runSpeed;
-        float yMovement = InputController.Instance.GetVerticalAxisRaw() * climbSpeed;
-
-        // 移动检测
-        Vector3 targetVeclocity = Vector3.zero;
-
-        if (m_GroundState == GroundState.GROUNDED)
-        {
-            targetVeclocity = new Vector2(xMovement, m_Rigidbody2D.velocity.y);
-        }
-        else if (m_GroundState == GroundState.ONWALL && !OnWallTouchGround())
-        {
-            targetVeclocity = new Vector2(m_Rigidbody2D.velocity.x, yMovement);
-        }
-        else if (m_GroundState == GroundState.HANGING)
-        {
-            targetVeclocity = new Vector2(xMovement, m_Rigidbody2D.velocity.y);
-        }
-        else if (m_GroundState == GroundState.IN_AIR)
-        {
-            targetVeclocity = new Vector2(xMovement, m_Rigidbody2D.velocity.y);
-        }
-
-        m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVeclocity, ref m_Velocity, m_MovementSmoothing);
-
-
-        if (jump)
-        {
-            Vector2 force = Vector2.zero;
-
-            if (m_GroundState == GroundState.GROUNDED)
-            {
-                force = new Vector2(0, jumpForce);
-            }
-            else if (m_GroundState == GroundState.ONWALL)
-            {
-                if (LeftBodyTouchWall())
-                    force = new Vector2(jumpForce, jumpForce);
-                else if (RightBodyTouchWall())
-                    force = new Vector2(-jumpForce, jumpForce);
-            }
-
-            m_Rigidbody2D.AddForce(force);
-        }
     }
 }
