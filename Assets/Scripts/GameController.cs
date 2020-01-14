@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class GameController : UnitySingleton<GameController>
 {
-    public LayerMask GroundLayer;
-    public LayerMask WallLayer;
+    public static LayerMask groundLayer;
+    public static LayerMask wallLayer;
 }

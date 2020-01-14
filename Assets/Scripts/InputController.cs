@@ -7,7 +7,12 @@ public class InputController : UnitySingleton<InputController>
 {
     public bool GetAttackKeyDown()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        return Input.GetKeyDown(KeyCode.J);
+    }
+
+    public bool GetJumpKeyDown()
+    {
+        if (Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.Space))
             return true;
         return false;
     }
@@ -18,15 +23,6 @@ public class InputController : UnitySingleton<InputController>
             return true;
         return false;
     }
-
-
-    public bool GetJumpKeyDown()
-    {
-        if (Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.Space))
-            return true;
-        return false;
-    }
-
 
     public float GetHorizontalAxisRaw()
     {

@@ -7,78 +7,85 @@ using UnityEngine;
 
 public class CharacterController2D : MonoBehaviour
 {
-    [SerializeField] private Transform m_Body;
-    private Rigidbody2D m_Rigidbody2D;
-    private Animator m_Animator;
+    public enum Location
+    {
+        Ground,
+        Wall,
+        Shelf,
+        Air
+    }
 
-    [SerializeField] private Transform m_GroundCheck;
-    [SerializeField] private Transform m_WallCheckL;
-    [SerializeField] private Transform m_WallCheckR;
+    [SerializeField] private Transform body;
+    private Rigidbody2D rigidbody2D;
+    private Animator animator;
 
-    const float k_ColliderCheckRadius = .1f;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private Transform wallCheckL;
+    [SerializeField] private Transform wallCheckR;
 
-    [Range(0, 10)] [SerializeField] private float m_RunSpeed;
-    [Range(0, 0.5f)] [SerializeField] private float m_MovementSmoothing = .1f;
-    [Range(0, 10)] [SerializeField] private float m_ClimbSpeed;
-    [Range(0, 800)] [SerializeField] private float m_JumpForce;
+    const float colliderCheckRadius = .1f;
 
-    private LayerMask m_WhatIsGround;
-    private LayerMask m_WhatIsWall;
+    [Range(0, 10)] [SerializeField] private float runSpeed;
+    [Range(0, 0.5f)] [SerializeField] private float movementSmoothing = .1f;
+    [Range(0, 10)] [SerializeField] private float climbSpeed;
+    [Range(0, 800)] [SerializeField] private float jumpForce;
 
-    private GroundState m_GroundState;
-    private bool m_FacingRight = true;
-    private Vector2 m_Velocity = Vector2.zero;
+    public Location location { get; set; }
+    private bool isFacingRight = true;
+    private Vector2 velocity = Vector2.zero;
 
-    private Vector2 m_MovementInput = Vector2.zero;
-    private bool m_Jump = false;
+    private Vector2 movementInput = Vector2.zero;
+    //private bool jumpPressed = false;
 
     private void Awake()
     {
-        m_Rigidbody2D = GetComponent<Rigidbody2D>();
-        m_Animator = m_Body.GetComponent<Animator>();
-        m_WhatIsGround = GameController.Instance.GroundLayer;
-        m_WhatIsWall = GameController.Instance.WallLayer;
+        rigidbody2D = GetComponent<Rigidbody2D>();
+        animator = body.GetComponent<Animator>();
     }
 
     private void Update()
     {
-        m_MovementInput.x = InputController.Instance.GetHorizontalAxisRaw();
-        m_MovementInput.y = InputController.Instance.GetVerticalAxisRaw();
+        movementInput.x = InputController.Instance.GetHorizontalAxisRaw();
+        movementInput.y = InputController.Instance.GetVerticalAxisRaw();
 
-        if (InputController.Instance.GetJumpKeyDown()) m_Jump = true;
+        //if (InputController.Instance.GetJumpKeyDown())
+        //{
+        //    jumpPressed = true;
+        //}
 
         if (FeetTouchGround())
         {
-            m_GroundState = GroundState.GROUNDED;
+            location = Location.Ground;
         }
         else if (BodyTouchWall())
         {
-            m_GroundState = GroundState.ONWALL;
+            location = Location.Wall;
         }
         else
         {
-            m_GroundState = GroundState.IN_AIR;
+            location = Location.Air;
         }
 
-        if (m_GroundState == GroundState.GROUNDED)
+
+        if (location == Location.Ground)
         {
-            m_WallCheckL.gameObject.SetActive(false);
-            m_WallCheckR.gameObject.SetActive(false);
-            m_Rigidbody2D.gravityScale = 1;
+            wallCheckL.gameObject.SetActive(false);
+            wallCheckR.gameObject.SetActive(false);
+            rigidbody2D.gravityScale = 1;
             SetAnimTrigger("idle");
             CheckFlip();
         }
-        else if (m_GroundState == GroundState.ONWALL)
+        else if (location == Location.Wall)
         {
-            m_Rigidbody2D.velocity = Vector2.zero;
-            m_Rigidbody2D.gravityScale = 0;
+            rigidbody2D.velocity = Vector2.zero;
+            rigidbody2D.gravityScale = 0;
             SetAnimTrigger("onwall");
         }
-        else if (m_GroundState == GroundState.IN_AIR)
+        else if (location == Location.Air)
         {
-            m_WallCheckL.gameObject.SetActive(true);
-            m_WallCheckR.gameObject.SetActive(true);
-            m_Rigidbody2D.gravityScale = 1;
+            wallCheckL.gameObject.SetActive(true);
+            wallCheckR.gameObject.SetActive(true);
+            rigidbody2D.gravityScale = 1;
             SetAnimTrigger("fall");
             CheckFlip();
         }
@@ -87,71 +94,129 @@ public class CharacterController2D : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (m_GroundState == GroundState.GROUNDED)
+        Vector2 move = Vector2.zero;
+
+        if (location == Location.Ground)
         {
-            Move(new Vector2(m_MovementInput.x * m_RunSpeed, 0));
-            if (m_Jump) Jump(new Vector2(0, m_JumpForce));
+            if (InputController.Instance.GetAttackKeyDown())
+            {
+                if (InputController.Instance.GetVerticalAxisRaw() > 0)
+                {
+                    Ninjutsu();
+                    move = new Vector2(movementInput.x * runSpeed, 0);
+                }
+                else if (InputController.Instance.GetVerticalAxisRaw() < 0)
+                {
+                    NormalAttack();
+                }
+                else
+                {
+                    move = new Vector2(movementInput.x * runSpeed, 0);
+                }
+            }
         }
-        else if (m_GroundState == GroundState.ONWALL)
+        else if (location == Location.Wall)
         {
-            Move(new Vector2(0, m_MovementInput.y * m_ClimbSpeed));
-            if (m_Jump) Jump(new Vector2(0, m_JumpForce));
+            if(InputController.Instance.GetAttackKeyDown())
+            {
+                Ninjutsu();
+            }
+            else
+            {
+                move = new Vector2(0, movementInput.y * climbSpeed);
+            }
         }
-        else if (m_GroundState == GroundState.IN_AIR)
+        else if (location == Location.Air)
         {
-            Move(new Vector2(m_MovementInput.x * m_RunSpeed, m_Rigidbody2D.velocity.y));
+            if(InputController.Instance.GetAttackKeyDown())
+            {
+                if(InputController.Instance.GetVerticalAxisRaw() > 0)
+                {
+                    Ninjutsu();
+                }
+                else
+                {
+                    NormalAttack();
+                }
+            }
+            move = new Vector2(movementInput.x * runSpeed, rigidbody2D.velocity.y);
+        }
+
+        rigidbody2D.velocity = Vector2.SmoothDamp(rigidbody2D.velocity, move, ref velocity, movementSmoothing);
+
+
+        if (InputController.Instance.GetJumpKeyDown())
+        {
+            Vector2 force = Vector2.zero;
+
+            if (location == Location.Ground || location == Location.Shelf)
+            {
+                rigidbody2D.AddForce(new Vector2(0, jumpForce));
+                SetAnimTrigger("jump");
+            }
+            else if (location == Location.Wall)
+            {
+                if (isFacingRight)
+                {
+                    force = new Vector2(-jumpForce, jumpForce) / 2;
+                }
+                else
+                {
+                    force = new Vector2(jumpForce, jumpForce) / 2;
+                }
+                SetAnimTrigger("jump");
+            }
+
+            rigidbody2D.AddForce(force);
         }
     }
 
-
-    private void Move(Vector2 move)
+    private void Ninjutsu()
     {
-        m_Rigidbody2D.velocity = Vector2.SmoothDamp(m_Rigidbody2D.velocity, move, ref m_Velocity, m_MovementSmoothing);
+        SetAnimTrigger("ninjutsu");
     }
 
-
-    private void Jump(Vector2 force)
+    private void NormalAttack()
     {
-        m_Rigidbody2D.AddForce(force);
-        m_Jump = false;
+        SetAnimTrigger("ninjutsu");
     }
 
 
     private void CheckFlip()
     {
-        if (m_MovementInput.x > 0 && !m_FacingRight || m_MovementInput.x < 0 && m_FacingRight)
+        if (movementInput.x > 0 && !isFacingRight || movementInput.x < 0 && isFacingRight)
         {
             // Switch the way the player is labelled as facing.
-            m_FacingRight = !m_FacingRight;
+            isFacingRight = !isFacingRight;
 
             // Multiply the player's x local scale by -1.
-            Vector3 theScale = m_Body.localScale;
+            Vector3 theScale = body.localScale;
             theScale.x *= -1;
-            m_Body.localScale = theScale;
+            body.localScale = theScale;
         }
     }
 
 
     private bool FeetTouchGround()
     {
-        if (m_GroundCheck.gameObject.activeInHierarchy &&
-            Physics2D.OverlapCircle(m_GroundCheck.position, k_ColliderCheckRadius, m_WhatIsGround))
+        if (groundCheck.gameObject.activeInHierarchy &&
+            Physics2D.OverlapCircle(groundCheck.position, colliderCheckRadius, GameController.groundLayer))
             return true;
         return false;
     }
 
     private bool LeftBodyTouchWall()
     {
-        if (m_WallCheckL.gameObject.activeInHierarchy &&
-            Physics2D.OverlapCircle(m_WallCheckL.position, k_ColliderCheckRadius, m_WhatIsWall))
+        if (wallCheckL.gameObject.activeInHierarchy &&
+            Physics2D.OverlapCircle(wallCheckL.position, colliderCheckRadius, GameController.wallLayer))
             return true;
         return false;
     }
 
     private bool RightBodyTouchWall()
     {
-        if (m_WallCheckR.gameObject.activeInHierarchy &&
-            Physics2D.OverlapCircle(m_WallCheckR.position, k_ColliderCheckRadius, m_WhatIsWall))
+        if (wallCheckR.gameObject.activeInHierarchy &&
+            Physics2D.OverlapCircle(wallCheckR.position, colliderCheckRadius, GameController.wallLayer))
             return true;
         return false;
     }
@@ -172,11 +237,11 @@ public class CharacterController2D : MonoBehaviour
         foreach (string trig in triggers)
         {
             if (trig == triggerName) exist = true;
-            m_Animator.ResetTrigger(trig);
+            animator.ResetTrigger(trig);
         }
 
         if (exist)
-            m_Animator.SetTrigger(triggerName);
+            animator.SetTrigger(triggerName);
         else
             throw new NotImplementedException();
     }
@@ -186,11 +251,22 @@ public class CharacterController2D : MonoBehaviour
     {
         return new string[]
         {
+            "idle",
             "run",
+            "attack",
+            "crouch_idle",
+            "crouch_attack",
+            "ninjutsu",
             "jump",
+            "jump_attack",
+            "jump_ninjutsu",
             "fall",
-            "onwall",
-            "idle"
+            "onwall_idle",
+            "onwall_move",
+            "onwall_ninjutsu",
+            "onshelf_idle",
+            "onshelf_move",
+            "onshelf_ninjutsu"
         };
     }
 }
